@@ -46,17 +46,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmMedico.cs">
+    <Compile Include="clsEspecialidades.cs" />
+    <Compile Include="FrmConsultaMedico.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmMedico.Designer.cs">
-      <DependentUpon>FrmMedico.cs</DependentUpon>
+    <Compile Include="FrmConsultaMedico.Designer.cs">
+      <DependentUpon>FrmConsultaMedico.cs</DependentUpon>
     </Compile>
-    <Compile Include="Medico.cs" />
+    <Compile Include="clsMedico.cs" />
+    <Compile Include="frmEspecialidades.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEspecialidades.Designer.cs">
+      <DependentUpon>frmEspecialidades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMedicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMedicos.Designer.cs">
+      <DependentUpon>frmMedicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMedico.resx">
-      <DependentUpon>FrmMedico.cs</DependentUpon>
+    <EmbeddedResource Include="FrmConsultaMedico.resx">
+      <DependentUpon>FrmConsultaMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEspecialidades.resx">
+      <DependentUpon>frmEspecialidades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMedicos.resx">
+      <DependentUpon>frmMedicos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

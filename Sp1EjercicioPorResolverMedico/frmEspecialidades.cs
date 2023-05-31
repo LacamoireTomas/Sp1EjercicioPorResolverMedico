@@ -7,20 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
 
 namespace Sp1EjercicioPorResolverMedico
 {
-    public partial class FrmConsultaMedico : Form
+    public partial class frmEspecialidades : Form
     {
-        public FrmConsultaMedico()
+        public frmEspecialidades()
         {
             InitializeComponent();
         }
 
-        private void FrmConsultaMedico_Load(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
-
+            clsEspecialidades objEspecialidad = new clsEspecialidades();
+            objEspecialidad.Grabar(txtNroID.Text, txtNombre.Text);
         }
     }
 }
