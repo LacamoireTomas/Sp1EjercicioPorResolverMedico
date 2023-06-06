@@ -32,7 +32,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblNroID = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtNroID = new System.Windows.Forms.TextBox();
+            this.txtID = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -71,12 +71,12 @@
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
             this.txtNombre.TabIndex = 3;
             // 
-            // txtNroID
+            // txtID
             // 
-            this.txtNroID.Location = new System.Drawing.Point(76, 130);
-            this.txtNroID.Name = "txtNroID";
-            this.txtNroID.Size = new System.Drawing.Size(100, 20);
-            this.txtNroID.TabIndex = 4;
+            this.txtID.Location = new System.Drawing.Point(76, 130);
+            this.txtID.Name = "txtID";
+            this.txtID.Size = new System.Drawing.Size(100, 20);
+            this.txtID.TabIndex = 4;
             // 
             // btnRegistrar
             // 
@@ -94,7 +94,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(327, 213);
             this.Controls.Add(this.btnRegistrar);
-            this.Controls.Add(this.txtNroID);
+            this.Controls.Add(this.txtID);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNroID);
             this.Controls.Add(this.lblNombre);
@@ -102,6 +102,7 @@
             this.Name = "frmEspecialidades";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEspecialidades";
+            this.Load += new System.EventHandler(this.frmEspecialidades_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,7 +114,7 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblNroID;
         private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtNroID;
+        private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Button btnRegistrar;
     }
 }

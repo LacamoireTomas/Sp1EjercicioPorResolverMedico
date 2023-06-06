@@ -20,7 +20,20 @@ namespace Sp1EjercicioPorResolverMedico
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             clsMedico objMedico = new clsMedico();
-            objMedico.Grabar(txtNroMatricula, txtNombre, cmbEspecialidad);
+            objMedico.Grabar(txtMatricula, txtNombre, cmbEspecialidad);
+            
+        }
+
+        private void frmMedicos_Load(object sender, EventArgs e)
+        {
+            clsEspecialidad objEspecialidad = new clsEspecialidad();
+            objEspecialidad.CargarEspecialidad(cmbEspecialidad);
+
+        }
+
+        private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           
         }
     }
 }

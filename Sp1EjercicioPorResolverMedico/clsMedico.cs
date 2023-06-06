@@ -8,39 +8,43 @@ using System.Windows.Forms;
 
 namespace Sp1EjercicioPorResolverMedico
 {
-    public class clsMedico
+    internal class clsMedico
     {
         public int Matricula { get; set; }
         public string Nombre { get; set; }
-        public int Especialidad { get; set; }
+        public string Especialidad { get; set; }
 
-        public void ListarMedicos(DataGridView dgvConsultas, ComboBox cmbEspecialidadC)
+
+        public void ConsultarMedicos(DataGridView dgvConsultas, ComboBox cmbEspecialidad)
         {
+
             dgvConsultas.Rows.Clear();
 
-            string auxiliar;
+            string linea;
             string especialidad = "";
             int idEspecialidad = 0;
             string auxEsp;
 
-            using (StreamReader streamReader = new StreamReader("MEDICOS.txt"))
+            using (StreamReader Lectorcito = new StreamReader("MEDICOS.txt"))
             {
-                while (streamReader.EndOfStream == false)
+
+                while (Lectorcito.EndOfStream == false)
                 {
-                    auxiliar = streamReader.ReadLine();
-                    if (cmbEspecialidadC.Text == "Todas")
+                    linea = Lectorcito.ReadLine();
+                    if (cmbEspecialidad.Text == "Todas")
                     {
                         using (StreamReader streamReaderE = new StreamReader("ESPECIALIDADES.txt"))
                         {
                             while (streamReaderE.EndOfStream == false)
                             {
                                 auxEsp = streamReaderE.ReadLine();
-                                if (auxiliar.Split(',')[2] == auxEsp.Split(',')[0])
+                                if (linea.Split(',')[2] == auxEsp.Split(',')[0])
                                 {
                                     especialidad = auxEsp.Split(',')[1];
                                 }
                             }
-                            dgvConsultas.Rows.Add(auxiliar.Split(',')[0], auxiliar.Split(',')[1], especialidad);
+                            dgvConsultas.Rows.Add(linea.Split(',')[0], linea.Split(',')[1], especialidad);
+
                         }
                     }
                     else
@@ -50,21 +54,23 @@ namespace Sp1EjercicioPorResolverMedico
                             while (streamReaderE.EndOfStream == false)
                             {
                                 auxEsp = streamReaderE.ReadLine();
-                                if (cmbEspecialidadC.Text == auxEsp.Split(',')[1])
+                                if (cmbEspecialidad.Text == auxEsp.Split(',')[1])
                                 {
                                     idEspecialidad = int.Parse(auxEsp.Split(',')[0]);
                                 }
                             }
-                            //streamReaderE.DiscardBufferedData();
-                            //streamReaderE.BaseStream.Position = 0;
-                            if (int.Parse(auxiliar.Split(',')[2]) == idEspecialidad)
+                            if (int.Parse(linea.Split(',')[2]) == idEspecialidad)
                             {
-                                dgvConsultas.Rows.Add(auxiliar.Split(',')[0], auxiliar.Split(',')[1], cmbEspecialidadC.Text);
+                                dgvConsultas.Rows.Add(linea.Split(',')[0], linea.Split(',')[1], cmbEspecialidad.Text);
                             }
+
                         }
+
                     }
                 }
+
             }
+
 
         }
 
@@ -107,14 +113,23 @@ namespace Sp1EjercicioPorResolverMedico
                     txtMatricula.Text = "";
                     txtNombre.Text = "";
                     cmbEspecialidad.SelectedIndex = -1;
-                    cmbEspecialidad.Text = "Todos";
+
                 }
             }
             else
             {
                 MessageBox.Show("Faltan datos por ingresar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
+
+
+
+
+
+
         }
 
+
     }
+
 }

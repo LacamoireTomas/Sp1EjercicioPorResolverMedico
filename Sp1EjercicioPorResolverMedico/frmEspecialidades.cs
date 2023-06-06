@@ -19,8 +19,13 @@ namespace Sp1EjercicioPorResolverMedico
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            clsEspecialidades objEspecialidad = new clsEspecialidades();
-            objEspecialidad.Grabar(txtNroID.Text, txtNombre.Text);
+            clsEspecialidad objEspecialidad = new clsEspecialidad();
+            objEspecialidad.Grabar(txtID.Text, txtNombre.Text);
+        }
+
+        private void frmEspecialidades_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

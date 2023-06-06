@@ -20,10 +20,11 @@ namespace Sp1EjercicioPorResolverMedico
 
         private void FrmConsultaMedico_Load(object sender, EventArgs e)
         {
-            clsEspecialidades objEspecialidad = new clsEspecialidades();
-            
-            clsMedico objMedico = new clsMedico();
-            objMedico.ListarMedicos(dgvConsultas, cmbEspecialidad);
+            cmbEspecialidad.Items.Add("Todas");
+            cmbEspecialidad.Text = "Todas";
+            clsEspecialidad objEspecialidad = new clsEspecialidad();
+            objEspecialidad.CargarEspecialidad(cmbEspecialidad);
+
         }
 
         private void btnRegistrarEspecialidad_Click(object sender, EventArgs e)
@@ -41,7 +42,9 @@ namespace Sp1EjercicioPorResolverMedico
         private void cmbEspecialidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             clsMedico objMedico = new clsMedico();
-            objMedico.ListarMedicos(dgvConsultas, cmbEspecialidad);
+            objMedico.ConsultarMedicos(dgvConsultas, cmbEspecialidad);
+            
+
         }
     }
 }

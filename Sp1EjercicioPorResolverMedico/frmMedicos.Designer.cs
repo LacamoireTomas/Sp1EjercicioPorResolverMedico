@@ -33,7 +33,7 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblNroMatricula = new System.Windows.Forms.Label();
-            this.txtNroMatricula = new System.Windows.Forms.TextBox();
+            this.txtMatricula = new System.Windows.Forms.TextBox();
             this.cmbEspecialidad = new System.Windows.Forms.ComboBox();
             this.lblEspecialidad = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -83,21 +83,21 @@
             this.lblNroMatricula.TabIndex = 7;
             this.lblNroMatricula.Text = "Nro Matricula";
             // 
-            // txtNroMatricula
+            // txtMatricula
             // 
-            this.txtNroMatricula.Location = new System.Drawing.Point(105, 132);
-            this.txtNroMatricula.Name = "txtNroMatricula";
-            this.txtNroMatricula.Size = new System.Drawing.Size(100, 20);
-            this.txtNroMatricula.TabIndex = 8;
+            this.txtMatricula.Location = new System.Drawing.Point(105, 132);
+            this.txtMatricula.Name = "txtMatricula";
+            this.txtMatricula.Size = new System.Drawing.Size(100, 20);
+            this.txtMatricula.TabIndex = 8;
             // 
             // cmbEspecialidad
             // 
-            this.cmbEspecialidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEspecialidad.FormattingEnabled = true;
             this.cmbEspecialidad.Location = new System.Drawing.Point(105, 178);
             this.cmbEspecialidad.Name = "cmbEspecialidad";
             this.cmbEspecialidad.Size = new System.Drawing.Size(100, 21);
             this.cmbEspecialidad.TabIndex = 9;
+            this.cmbEspecialidad.SelectedIndexChanged += new System.EventHandler(this.cmbEspecialidad_SelectedIndexChanged);
             // 
             // lblEspecialidad
             // 
@@ -115,7 +115,7 @@
             this.ClientSize = new System.Drawing.Size(323, 261);
             this.Controls.Add(this.lblEspecialidad);
             this.Controls.Add(this.cmbEspecialidad);
-            this.Controls.Add(this.txtNroMatricula);
+            this.Controls.Add(this.txtMatricula);
             this.Controls.Add(this.lblNroMatricula);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.txtNombre);
@@ -124,6 +124,7 @@
             this.Name = "frmMedicos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMedicos";
+            this.Load += new System.EventHandler(this.frmMedicos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -136,7 +137,7 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblNroMatricula;
-        private System.Windows.Forms.TextBox txtNroMatricula;
+        private System.Windows.Forms.TextBox txtMatricula;
         private System.Windows.Forms.ComboBox cmbEspecialidad;
         private System.Windows.Forms.Label lblEspecialidad;
     }
